@@ -1,0 +1,6 @@
+SELECT DISTINCT e2.name AS 'Name'
+FROM Employee e1
+INNER JOIN Employee e2
+ON e1.managerid = e2.id
+GROUP BY e1.managerid
+HAVING count(DISTINCT e1.id) >= 5;
